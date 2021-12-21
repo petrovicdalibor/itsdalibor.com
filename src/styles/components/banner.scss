@@ -1,0 +1,86 @@
+.main {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  background-color: $white;
+  .row {
+    flex-direction: column;
+    justify-content: center;
+    h2 {
+      font-size: 3rem;
+      line-height: 4.2rem;
+      font-weight: 700;
+      z-index: 10;
+      color: $white;
+      mix-blend-mode: difference;
+      @include media("<=tablet") {
+        font-size: 2.4rem;
+        line-height: 3rem;
+      }
+      @include media("<=phone") {
+        margin-top: 70px;
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+      }
+      .line {
+        margin-bottom: 8px;
+        height: 58px;
+        position: relative;
+        overflow: hidden;
+        &:nth-child(3) {
+          display: none;
+          @include media("<=620px") {
+            display: block;
+          }
+          @include media("<=phone") {
+            display: block;
+          }
+        }
+        @include media("<=tablet") {
+          height: 48px;
+        }
+        @include media("<=phone") {
+          height: 32px;
+        }
+        span {
+          position: absolute;
+          p {
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+          }
+          @include media("<=620px") {
+            .nl {
+              display: none;
+            }
+          }
+          .colorful {
+            display: inline;
+          }
+        }
+      }
+    }
+  }
+  .btn-row {
+    font-size: 1.2rem;
+    a {
+      color: $black;
+      text-decoration: none;
+      z-index: 1;
+      &:after {
+        z-index: 0;
+        font-size: 40px;
+        position: relative;
+        content: "\2192";
+        color: #bababa;
+        margin-left: 0px;
+        bottom: -7px;
+        display: inline-block;
+        -webkit-transition: all 0.2s ease-in-out;
+      }
+      &:hover:after {
+        color: $cherry;
+        margin-left: 10px;
+      }
+    }
+  }
+}
